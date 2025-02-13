@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced 3D AI Robot</title>
+    <title>Advanced AI Assistant</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands"></script>
 </head>
 <body>
-    <header>
-        <h1>AI Virtual Assistant</h1>
-    </header>
-
-    <div id="robot-container"></div>
-
-    <div class="chat-box">
-        <input type="text" id="textInput" placeholder="Type your question...">
-        <button onclick="handleTextInput()">Send</button>
-        <button onclick="startListening()">🎤 Speak</button>
+    <div class="assistant-container">
+        <div class="robot">
+            <img id="robot-img" src="robot_talking.gif" alt="AI Robot">
+            <div class="status">Tap to Speak</div>
+        </div>
+        <button id="speak-btn">🎤 Speak</button>
+        <div class="response" id="response-text">I'm ready to assist you.</div>
     </div>
 
     <script src="script.js"></script>
