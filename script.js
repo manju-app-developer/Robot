@@ -1,86 +1,83 @@
-// script.js
-
-// Check if Speech Recognition is available
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const synth = window.speechSynthesis;
 
 if (!SpeechRecognition) {
     alert("Your browser does not support Speech Recognition. Please use Chrome or Edge.");
 } else {
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'en-US';
-    recognition.continuous = false;
-    recognition.interimResults = false;
+    const commandRecognition = new SpeechRecognition();
+    commandRecognition.lang = 'en-US';
+    commandRecognition.continuous = false;
+    commandRecognition.interimResults = false;
 
-    // Smart AI Responses with Variations
-    const responses = {
-        "hi": ["Hello! How can I assist you?", "Hey there! What do you need?", "Hi! Ready to help."],
-        "hello": ["Hello! How can I assist you?", "Hey there! What do you need?", "Hi! Ready to help."],
-        "who are you": ["I am Nova, your AI assistant!", "I am a virtual AI created to help you.", "Just a friendly AI ready to assist!"],
-        "what is your name": ["I am Manju, your A.I assistant.", "You can call me Manju A.I.", "I am Manju A.I, your digital helper!"],
-        "how are you": ["I'm great! How about you?", "I'm always operating at peak efficiency!", "I'm just a program, but I'm doing well!"],
-        "what can you do": ["I can answer science and math questions, you can ask me!", "I can help you with science knowledge", "I'm here to assist with whatever you need."],
-        "thank you": ["You're welcome!", "Happy to help!", "Anytime!"],
-        "goodbye": ["Goodbye! Have a great day!", "See you later!", "Take care!"],
-        "who created you": ["I am created by Manju", "I am created by a Manju ,a student"]
-        };
+    let knowledgeBase = {}; // This will store fetched data
 
-    // Function to handle speech output
+    async function loadKnowledgeBase() {
+        try {
+            const response = await fetch('data.json'); // Load external data file
+            knowledgeBase = await response.json();
+            console.log("Knowledge Base Loaded:", knowledgeBase);
+        } catch (error) {
+            console.error("Error loading knowledge base:", error);
+        }
+    }
+
+    function generateAnswer(query) {
+        query = query.toLowerCase();
+
+        // Check for predefined responses
+        for (let key in knowledgeBase.responses) {
+            if (query.includes(key)) {
+                return knowledgeBase.responses[key][Math.floor(Math.random() * knowledgeBase.responses[key].length)];
+            }
+        }
+
+        // Check for knowledge-based responses
+        for (let entry of knowledgeBase.knowledge) {
+            for (let keyword of entry.keywords) {
+                if (query.includes(keyword)) {
+                    return entry.response;
+                }
+            }
+        }
+
+        return "That's an interesting question! Let me think about it...";
+    }
+
     function speak(text) {
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.voice = synth.getVoices()[1] || synth.getVoices()[0]; // Choose a better voice if available
+        utterance.voice = synth.getVoices()[1] || synth.getVoices()[0];
         utterance.rate = 1.0;
         utterance.pitch = 1.2;
 
-        // Change robot image to talking mode
         document.getElementById("robot-img").src = "robot_talking.gif";
 
         synth.speak(utterance);
-        document.getElementById("response-text").innerText = text; // Display response
+        document.getElementById("response-text").innerText = text;
 
         utterance.onend = () => {
-            // Revert back to idle image after speaking
             document.getElementById("robot-img").src = "robot_talking.gif";
         };
     }
 
-    // Function to get random response
-    function getRandomResponse(key) {
-        if (responses[key]) {
-            let variations = responses[key];
-            return variations[Math.floor(Math.random() * variations.length)];
-        }
-        return "I'm sorry, I don't understand that.";
+    function startListening() {
+        console.log("Listening for user command...");
+        document.querySelector(".status").innerText = "Listening...";
+        document.getElementById("robot-img").src = "robot_talking.gif";
+        commandRecognition.start();
     }
 
-    // Start recognition when button is clicked
-    document.getElementById("speak-btn").addEventListener("click", () => {
-        recognition.start();
-        document.querySelector(".status").innerText = "Listening...";
-        document.getElementById("robot-img").src = "robot_talking.gif"; // Change to listening image
-    });
-
-    // Process recognized speech
-    recognition.onresult = (event) => {
+    commandRecognition.onresult = (event) => {
         let userText = event.results[0][0].transcript.toLowerCase();
         document.querySelector(".status").innerText = "Processing...";
         console.log("User said: ", userText);
 
-        let responseText = "I'm sorry, I don't understand that.";
-        for (let key in responses) {
-            if (userText.includes(key)) {
-                responseText = getRandomResponse(key);
-                break;
-            }
-        }
-
+        let responseText = generateAnswer(userText);
         speak(responseText);
-        document.querySelector(".status").innerText = "Listening...";
     };
 
-    // Handle errors
-    recognition.onerror = (event) => {
-        console.error("Speech recognition error:", event.error);
-        document.querySelector(".status").innerText = "Error. Try again.";
-    };
+    document.getElementById("speak-btn").addEventListener("click", () => {
+        startListening();
+    });
+
+    loadKnowledgeBase(); // Load data when script runs
 }
