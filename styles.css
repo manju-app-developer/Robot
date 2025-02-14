@@ -1,6 +1,7 @@
-/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-    background: radial-gradient(circle, #010a10, #000000);
+    background: radial-gradient(circle, #021a2e, #000000);
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -12,63 +13,127 @@ body {
     overflow: hidden;
 }
 
+/* Assistant Container */
 .assistant-container {
     background: rgba(0, 255, 255, 0.1);
-    padding: 25px;
+    padding: 30px;
     border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
-    width: 380px;
+    box-shadow: 0px 0px 40px rgba(0, 255, 255, 0.8);
+    width: 450px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(0, 255, 255, 0.3);
     transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Glowing Border Animation */
+.assistant-container::before {
+    content: "";
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    background: linear-gradient(45deg, cyan, blue, purple, cyan);
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0.5;
+}
+
+/* Robot Animation */
 .robot {
     position: relative;
 }
 
 .robot img {
-    width: 190px;
-    animation: float 3s infinite ease-in-out;
-    filter: drop-shadow(0px 0px 20px cyan);
+    width: 200px;
+    animation: float 3s infinite ease-in-out, glow 2s infinite alternate;
+    filter: drop-shadow(0px 0px 25px cyan);
     transition: 0.5s ease-in-out;
 }
 
 .status {
-    font-size: 16px;
-    color: #0ff;
-    margin-top: 10px;
+    font-size: 18px;
+    color: #00ffff;
+    margin-top: 12px;
     font-weight: bold;
 }
 
+/* Speak Button */
 button {
-    background: linear-gradient(45deg, #00ffaa, #00bbff);
+    background: linear-gradient(45deg, #00ffaa, #0088ff);
     color: #000;
     border: none;
-    padding: 12px 25px;
-    font-size: 18px;
-    margin-top: 20px;
+    padding: 14px 30px;
+    font-size: 20px;
+    margin-top: 25px;
     cursor: pointer;
-    border-radius: 12px;
-    box-shadow: 0px 0px 15px #00ffaa;
-    transition: all 0.3s;
+    border-radius: 14px;
+    box-shadow: 0px 0px 20px #00ffaa;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover Animation */
+button::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+    border-radius: inherit;
+}
+
+button:hover::before {
+    transform: scale(1.1);
 }
 
 button:hover {
-    background: linear-gradient(45deg, #00ddaa, #0088ff);
-    box-shadow: 0px 0px 25px #00ffaa;
-    transform: scale(1.05);
+    background: linear-gradient(45deg, #00ddaa, #0055ff);
+    box-shadow: 0px 0px 30px #00ffaa;
+    transform: scale(1.07);
 }
 
+/* AI Response Text */
 .response {
     margin-top: 20px;
-    font-size: 18px;
-    min-height: 60px;
+    font-size: 20px;
+    min-height: 70px;
     font-weight: bold;
     transition: 0.3s ease-in-out;
+    text-shadow: 0px 0px 12px rgba(0, 255, 255, 1);
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: inset 0px 0px 15px rgba(0, 255, 255, 0.3);
 }
 
 /* Floating Animation */
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-14px); }
     100% { transform: translateY(0px); }
+}
+
+/* Glowing Effect */
+@keyframes glow {
+    0% { filter: drop-shadow(0px 0px 15px cyan); }
+    100% { filter: drop-shadow(0px 0px 30px cyan); }
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .assistant-container {
+        width: 90%;
+        padding: 20px;
+    }
+    .robot img {
+        width: 160px;
+    }
+    .response {
+        font-size: 18px;
+    }
 }
