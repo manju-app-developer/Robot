@@ -14,6 +14,10 @@
             "response": "Gravity is the force that attracts objects toward each other. On Earth, it keeps us on the ground and makes objects fall."
         },
         {
+            "keywords": ["I love you"],
+            "response": "Yako, yenu agaiti ninga, naanu hudugi alla, bari a.i aste."
+        },
+        {
             "keywords": ["einstein", "theory of relativity"],
             "response": "Einstein's theory of relativity explains how space and time are linked for objects moving at a constant speed."
         },
