@@ -1,0 +1,145 @@
+{
+    "responses": {
+        "hi": ["Hello! How can I assist you?", "Hey there! What do you need?", "Hi! Ready to help."],
+        "hello": ["Hello! How can I assist you?", "Hey there! What do you need?", "Hi! Ready to help."],
+        "who are you": ["I am Nova, your A.I assistant!", "I am a virtual A.I created to help you."],
+        "what is your name": ["I am Nova, your AI assistant.", "You can call me Nova."],
+        "how are you": ["I'm great! How about you?", "I'm always operating at peak efficiency!"],
+        "thank you": ["You're welcome!", "Happy to help!", "Anytime!"],
+        "goodbye": ["Goodbye! Have a great day!", "See you later!", "Take care!"]
+    },
+    "knowledge": [
+        {
+            "keywords": ["gravity"],
+            "response": "Gravity is the force that attracts objects toward each other. On Earth, it keeps us on the ground and makes objects fall."
+        },
+        {
+            "keywords": ["einstein", "theory of relativity"],
+            "response": "Einstein's theory of relativity explains how space and time are linked for objects moving at a constant speed."
+        },
+        {
+            "keywords": ["speed of light"],
+            "response": "The speed of light is approximately 299,792,458 meters per second in a vacuum."
+        },
+        {
+            "keywords": ["newton's laws"],
+            "response": "Newton's Laws describe motion: 1st law - objects stay in motion or rest unless acted upon; 2nd law - Force = Mass × Acceleration; 3rd law - Every action has an equal and opposite reaction."
+        },
+        {
+            "keywords": ["black hole"],
+            "response": "A black hole is a region in space where gravity is so strong that nothing, not even light, can escape from it."
+        },
+        {
+            "keywords": ["quantum mechanics"],
+            "response": "Quantum mechanics is the study of how particles behave at atomic and subatomic levels, often defying classical physics."
+        },
+        {
+            "keywords": ["doppler effect"],
+            "response": "The Doppler Effect is the change in frequency of a wave relative to an observer moving toward or away from the source."
+        },
+        {
+            "keywords": ["atoms"],
+            "response": "Atoms are the basic units of matter and consist of a nucleus surrounded by electrons."
+        },
+        {
+            "keywords": ["chemical reaction"],
+            "response": "A chemical reaction is a process where substances (reactants) transform into different substances (products)."
+        },
+        {
+            "keywords": ["periodic table"],
+            "response": "The periodic table arranges elements based on their atomic number and properties, making it easier to study their relationships."
+        },
+        {
+            "keywords": ["acid", "base"],
+            "response": "Acids donate hydrogen ions (H+) and have a pH below 7, while bases accept hydrogen ions and have a pH above 7."
+        },
+        {
+            "keywords": ["oxidation", "reduction"],
+            "response": "Oxidation is the loss of electrons, and reduction is the gain of electrons. Together, they form redox reactions."
+        },
+        {
+            "keywords": ["radioactivity"],
+            "response": "Radioactivity is the emission of radiation from unstable atomic nuclei as they decay into more stable forms."
+        },
+        {
+            "keywords": ["photosynthesis"],
+            "response": "Photosynthesis is the process by which plants convert sunlight into energy, producing oxygen as a byproduct."
+        },
+        {
+            "keywords": ["dna"],
+            "response": "DNA, or deoxyribonucleic acid, carries genetic instructions for the growth, development, and reproduction of living organisms."
+        },
+        {
+            "keywords": ["mutation"],
+            "response": "A mutation is a change in the DNA sequence, which can lead to variations in traits and evolution."
+        },
+        {
+            "keywords": ["mitosis"],
+            "response": "Mitosis is cell division that results in two identical daughter cells for growth and repair."
+        },
+        {
+            "keywords": ["meiosis"],
+            "response": "Meiosis is a type of cell division that produces reproductive cells (gametes) with half the genetic material."
+        },
+        {
+            "keywords": ["ecosystem"],
+            "response": "An ecosystem is a community of living organisms interacting with their environment."
+        },
+        {
+            "keywords": ["solar system"],
+            "response": "The solar system consists of the Sun and all the objects that orbit it, including planets, moons, asteroids, and comets."
+        },
+        {
+            "keywords": ["milky way"],
+            "response": "The Milky Way is the galaxy that contains our solar system, and it has billions of stars."
+        },
+        {
+            "keywords": ["big bang"],
+            "response": "The Big Bang Theory explains the origin of the universe, stating that it started as a singularity and has been expanding ever since."
+        },
+        {
+            "keywords": ["dark matter"],
+            "response": "Dark matter is a mysterious substance that makes up about 27% of the universe but does not emit light."
+        },
+        {
+            "keywords": ["event horizon"],
+            "response": "An event horizon is the boundary around a black hole beyond which nothing can escape, not even light."
+        },
+        {
+            "keywords": ["robotics"],
+            "response": "Robotics is the branch of technology that designs and builds robots for various tasks."
+        },
+        {
+            "keywords": ["artificial intelligence"],
+            "response": "Artificial Intelligence (AI) is the simulation of human intelligence in machines that can learn and solve problems."
+        },
+        {
+            "keywords": ["machine learning"],
+            "response": "Machine learning is a subset of AI where computers learn from data to improve performance without explicit programming."
+        },
+        {
+            "keywords": ["electricity"],
+            "response": "Electricity is the flow of electrons through a conductor, used to power devices and machines."
+        },
+        {
+            "keywords": ["nanotechnology"],
+            "response": "Nanotechnology is the manipulation of matter at the atomic or molecular scale for applications in medicine, electronics, and materials science."
+        },
+        {
+            "keywords": ["biotechnology"],
+            "response": "Biotechnology is the use of living organisms or biological processes to develop new technologies and products, especially in medicine and agriculture."
+        },
+        {
+            "keywords": ["quantum computing"],
+            "response": "Quantum computing uses quantum bits (qubits) instead of classical bits to perform complex computations much faster than traditional computers."
+        },
+        {
+            "keywords": ["fossil fuels"],
+            "response": "Fossil fuels such as coal, oil, and natural gas are energy sources formed from the remains of ancient plants and animals."
+        },
+        {
+            "keywords": ["nuclear energy"],
+            "response": "Nuclear energy is generated through nuclear reactions, such as fission, where atomic nuclei split to release energy."
+        }
+    ]
+}
