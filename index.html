@@ -10,10 +10,15 @@
     <div class="assistant-container">
         <div class="robot">
             <img id="robot-img" src="robot_talking.gif" alt="AI Robot">
-            <div class="status">Tap to Speak</div>
+            <div class="status" id="status-text">Tap to Speak</div>
         </div>
+
         <button id="speak-btn">🎤 Speak</button>
-        <div class="response" id="response-text">I'm ready to assist you.</div>
+
+        <div class="response-container">
+            <div class="response-label">AI Response:</div>
+            <div class="response" id="response-text">I'm ready to assist you.</div>
+        </div>
     </div>
 
     <script src="script.js"></script>
