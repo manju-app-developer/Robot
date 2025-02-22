@@ -1,4 +1,4 @@
-13{
+1213{
     "responses": {
         "hi": ["Hello! How can I assist you?", "Hey there! What do you need?", "Hi! Ready to help."],
         "hello": ["Hello! How can I assist you?", "Hey there! What do you need?", "Hi! Ready to help."],
@@ -14,7 +14,7 @@
             "keywords": ["gravity"],
             "response": "Gravity is the force that attracts objects toward each other. On Earth, it keeps us on the ground and makes objects fall."
         },
-         {
+        {
             "keywords": ["sachin"],
             "response": "gamasa patita hay hay gamasa patita hay hay,,,sachin, yellidiyappa"
         },
