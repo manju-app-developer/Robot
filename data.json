@@ -7,7 +7,7 @@
         "how are you": ["I'm great! How about you?", "I'm always operating at peak efficiency!"],
         "thank you": ["You're welcome!", "Happy to help!", "Anytime!"],
         "goodbye": ["Goodbye! Have a great day!", "See you later!", "Take care!"],
-        "who created you": ["I am created by Manju", "Manju created me!" ,"Naanu helalla, enu maadti"]
+        "who created you": ["I am created by Manju", "Manju created me!", "Naanu helalla, enu maadti"]
     },
     "knowledge": [
         {
@@ -121,30 +121,6 @@
         {
             "keywords": ["machine learning"],
             "response": "Machine learning is a subset of AI where computers learn from data to improve performance without explicit programming."
-        },
-        {
-            "keywords": ["electricity"],
-            "response": "Electricity is the flow of electrons through a conductor, used to power devices and machines."
-        },
-        {
-            "keywords": ["nanotechnology"],
-            "response": "Nanotechnology is the manipulation of matter at the atomic or molecular scale for applications in medicine, electronics, and materials science."
-        },
-        {
-            "keywords": ["biotechnology"],
-            "response": "Biotechnology is the use of living organisms or biological processes to develop new technologies and products, especially in medicine and agriculture."
-        },
-        {
-            "keywords": ["quantum computing"],
-            "response": "Quantum computing uses quantum bits (qubits) instead of classical bits to perform complex computations much faster than traditional computers."
-        },
-        {
-            "keywords": ["fossil fuels"],
-            "response": "Fossil fuels such as coal, oil, and natural gas are energy sources formed from the remains of ancient plants and animals."
-        },
-        {
-            "keywords": ["nuclear energy"],
-            "response": "Nuclear energy is generated through nuclear reactions, such as fission, where atomic nuclei split to release energy."
         }
     ]
 }
